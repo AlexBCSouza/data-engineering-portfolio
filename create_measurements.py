@@ -15,7 +15,7 @@ def check_args(file_args):
         print(
             "Usage:  create_measurements.sh <positive integer number of records to create>")
         print("        You can use underscore notation for large number of records.")
-        print("        For example:  1_000_000_000 for one billion")
+        print("        For example:  10_000_000_000 for one billion")
         exit()
 
 
