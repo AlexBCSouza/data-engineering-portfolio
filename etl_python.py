@@ -4,7 +4,7 @@ import time
 
 from pathlib import Path
 
-Path_do_txt = "Data\measurements.txt"
+Path_do_txt = Path("data") / "measurements.txt"
 
 def processar_temperaturas(path_do_txt: Path):
     print("Iniciando o processamento do arquivo.")
@@ -25,10 +25,10 @@ def processar_temperaturas(path_do_txt: Path):
     results = {} 
 
     for station, temperatures in temperatura_por_station.items():
-    min_temp = min(temperatures)
-    mean_temp = sum(temperatures) / len(temperatures)
-    max_temp = max(temperatures)
-    results[station] = (min_temp, mean_temp, max_temp)
+        min_temp = min(temperatures)
+        mean_temp = sum(temperatures) / len(temperatures)
+        max_temp = max(temperatures)
+        results[station] = (min_temp, mean_temp, max_temp)
 
     print("Estatística calculada. Ordenando...")
     # Ordenando os resultados pelo nome da estação
@@ -44,8 +44,8 @@ def processar_temperaturas(path_do_txt: Path):
 
 # subistitua data/measurements10M.txt pelo caminho correto do seu arquivo.
 
-if_name__ == "__main__": # type: ignore
+if __name__ == "__main__":
 
-Path_do_txt: Path = Path("data/measurements.txt")
-# 100M > 5 minutos.
-resultados = processar_temperaturas(Path_do_txt)
+    Path_do_txt: Path = Path("data/measurements.txt")
+    # 100M > 5 minutos.
+    resultados = processar_temperaturas(Path_do_txt)
